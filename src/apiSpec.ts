@@ -240,9 +240,11 @@ export const apiSpec = {
             name: "id",
             in: "path",
             required: true,
+            description: "ID of the song",
             schema: {
               type: "integer"
-            }
+            },
+            example: 123
           }
         ],
         requestBody: {
@@ -292,9 +294,11 @@ export const apiSpec = {
           name: "id",
           in: "path",
           required: true,
+          description: "ID of the artist",
           schema: {
             type: "integer"
-          }
+          },
+          example: 134
         }
       ],
       put: {
@@ -374,9 +378,11 @@ export const apiSpec = {
           name: "id",
           in: "path",
           required: true,
+          description: "ID of the album",
           schema: {
             type: "integer"
-          }
+          },
+          example: 1
         }
       ],
       put: {
@@ -456,9 +462,11 @@ export const apiSpec = {
           name: "id",
           in: "path",
           required: true,
+          description: "ID of the song",
           schema: {
             type: "integer"
-          }
+          },
+          example: 456
         }
       ],
       put: {
