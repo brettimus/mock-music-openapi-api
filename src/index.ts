@@ -14,6 +14,7 @@ type Bindings = {
   ANTHROPIC_API_KEY: string;
   CLOUDFLARE_ACCOUNT_ID: string;
   CLOUDFLARE_GATEWAY_ID: string;
+  FP_API_KEY: string;
 };
 
 const app = new Hono<{ Bindings: Bindings }>();
@@ -223,10 +224,13 @@ app.post("/api/songs/:id/audio", async (c) => {
 
 app.use(
   "/fp/*",
-  createMiddleware({
-    openapi: { url: "/openapi.json" },
-    apiKey: "",
-  }),
+  async (c, next) => {
+    const apiKey = c.env.FP_API_KEY;
+    return createMiddleware({
+      openapi: { url: "/openapi.json" },
+      apiKey,
+    })(c, next)
+  }
 );
 
 // export default instrument(app);
