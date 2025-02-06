@@ -1,4 +1,4 @@
-// import { instrument } from "@fiberplane/hono-otel";
+import { instrument } from "@fiberplane/hono-otel";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
@@ -226,6 +226,7 @@ app.use(
   "/fp/*",
   async (c, next) => {
     const apiKey = c.env.FP_API_KEY;
+    console.log("apiKey", apiKey);
     return createMiddleware({
       openapi: { url: "/openapi.json" },
       apiKey,
@@ -233,5 +234,5 @@ app.use(
   }
 );
 
-// export default instrument(app);
-export default app;
+export default instrument(app);
+// export default app;
