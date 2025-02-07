@@ -10,10 +10,6 @@ import { serveEmojiFavicon } from "./middleware";
 import { mockData } from "./mockData";
 
 type Bindings = {
-  DB: D1Database;
-  ANTHROPIC_API_KEY: string;
-  CLOUDFLARE_ACCOUNT_ID: string;
-  CLOUDFLARE_GATEWAY_ID: string;
   FP_API_KEY: string;
 };
 
