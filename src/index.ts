@@ -222,13 +222,13 @@ app.use(
   "/fp/*",
   async (c, next) => {
     const apiKey = c.env.FP_API_KEY;
-    console.log("apiKey", apiKey);
     return createMiddleware({
       openapi: { url: "/openapi.json" },
       apiKey,
+    // @ts-expect-error - TODO: fix this in the middleware
     })(c, next)
   }
 );
 
-export default instrument(app);
-// export default app;
+// export default instrument(app);
+export default app;
