@@ -539,9 +539,97 @@ export const apiSpec = {
           }
         }
       }
+    },
+    "/api/auth/basic": {
+      get: {
+        tags: ["Misc"],
+        summary: "Basic Auth route",
+        description: "Route with Basic Authentication",
+        security: {
+          BasicAuth: []
+        },
+        responses: {
+          "200": {
+            description: "OK"
+          },
+          "401": {
+            description: "No Basic Auth header provided"
+          }
+        }
+      }
+    },
+    "/api/auth/bearer": {
+      get: {
+        tags: ["Misc"],
+        summary: "Bearer Auth route",
+        description: "Route with Bearer Authentication",
+        security: {
+          BearerAuth: []
+        },
+        responses: {
+          "200": {
+            description: "OK"
+          },
+          "401": {
+            description: "No Bearer Auth header provided"
+          }
+        }
+      }
+    },
+    "/api/auth/key": {
+      get: {
+        tags: ["Misc"],
+        summary: "API Key Auth route",
+        description: "Route with API Key Authentication",
+        security: {
+          ApiKeyAuth: []
+        },
+        responses: {
+          "200": {
+            description: "OK"
+          },
+          "401": {
+            description: "No API Key header provided"
+          }
+        }
+      }
+    },
+    "/api/auth/google": {
+      get: {
+        tags: ["Misc"],
+        summary: "Google Auth route",
+        description: "Route with Google OpenIdConnect Authentication",
+        security: {
+          GoogleOpenIdAuth: ["read"]
+        },
+        responses: {
+          "200": {
+            description: "OK"
+          }
+        }
+      }
     }
   },
   components: {
+    securitySchemas: {
+      BasicAuth: {
+        type: "http",
+        scheme: "basic"
+      },
+      BearerAuth: {
+        type: "http",
+        scheme: "bearer"
+      },
+      ApiKeyAuth: {
+        type: "apiKey",
+        in: "header",
+        name: "X-API-Key"
+      },
+      GoogleOpenIdAuth: {
+        type: "openIdConnect",
+        openIdConnectUrl: "https://accounts.google.com/.well-known/openid-configuration"
+      }
+    },
     schemas: {
       NewArtist: {
         type: "object",

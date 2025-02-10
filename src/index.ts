@@ -222,6 +222,53 @@ app.post("/api/songs/:id/audio", async (c) => {
   });
 });
 
+// Misc auth routes
+app.get("/api/auth/basic", async (c) => {
+  const authHeader = c.req.header("Authorization");
+
+  if (authHeader === undefined) {
+    return c.text("bad kitty, you didn't even sent a Authorization header!", 401);
+  }
+
+  if (!authHeader.startsWith("Basic")) {
+    return c.text("bad kitty, the Authorization header needs to be Basic auth!", 401);
+  }
+
+  // cat
+  return c.body("meow :)");
+});
+
+app.get("/api/auth/bearer", async (c) => {
+  const authHeader = c.req.header("Authorization");
+
+  if (authHeader === undefined) {
+    return c.text("bad doggo, you didn't even sent a Authorization header!", 401);
+  }
+
+  if (!authHeader.startsWith("Bearer")) {
+    return c.text("bad doggo, the Authorization header needs to be Bearer auth!", 401);
+  }
+
+  // dog
+  return c.body("woof :)");
+});
+
+app.get("/api/auth/key", async (c) => {
+  const authHeader = c.req.header("X-API-Key");
+
+  if (authHeader === undefined) {
+    return c.text("bad mooer, you didn't even sent a X-API-Key header!", 401);
+  }
+
+  // cow
+  return c.body("moo :)");
+});
+
+app.get("/api/auth/google", async (c) => {
+  // sheep
+  return c.body("baa :)");
+});
+
 app.use(
   "/fp/*",
   async (c, next) => {
