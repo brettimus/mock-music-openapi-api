@@ -269,6 +269,39 @@ app.get("/api/auth/google", async (c) => {
   return c.body("baa :)");
 });
 
+// Misc method routes
+app.get("/api/methods/get", async (c) => {
+  return c.body("OK");
+});
+
+app.on("HEAD", "/api/methods/head", async (c) => {
+  return c.body("OK");
+});
+
+app.options("/api/methods/options", async (c) => {
+  return c.body("OK");
+});
+
+app.on("TRACE", "/api/methods/trace", async (c) => {
+  return c.body("OK");
+});
+
+app.put("/api/methods/put", async (c) => {
+  return c.body("OK");
+});
+
+app.delete("/api/methods/delete", async (c) => {
+  return c.body("OK");
+});
+
+app.post("/api/methods/post", async (c) => {
+  return c.body("OK");
+});
+
+app.patch("/api/methods/patch", async (c) => {
+  return c.body("OK");
+});
+
 app.use(
   "/fp/*",
   async (c, next) => {

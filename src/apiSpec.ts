@@ -608,7 +608,103 @@ export const apiSpec = {
           }
         }
       }
-    }
+    },
+    "/api/methods/get": {
+      get: {
+        tags: ["Misc"],
+        summary: "GET route",
+        description: "Route with GET HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/head": {
+      head: {
+        tags: ["Misc"],
+        summary: "HEAD route",
+        description: "Route with HEAD HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/options": {
+      options: {
+        tags: ["Misc"],
+        summary: "OPTIONS route",
+        description: "Route with OPTIONS HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/trace": {
+      trace: {
+        tags: ["Misc"],
+        summary: "TRACE route",
+        description: "Route with TRACE HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/put": {
+      put: {
+        tags: ["Misc"],
+        summary: "PUT route",
+        description: "Route with PUT HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/delete": {
+      delete: {
+        tags: ["Misc"],
+        summary: "DELETE route",
+        description: "Route with DELETE HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/post": {
+      post: {
+        tags: ["Misc"],
+        summary: "POST route",
+        description: "Route with POST HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/patch": {
+      patch: {
+        tags: ["Misc"],
+        summary: "PATCH route",
+        description: "Route with PATCH HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
   },
   components: {
     securitySchemas: {
