@@ -302,6 +302,10 @@ app.patch("/api/methods/patch", async (c) => {
   return c.body("OK");
 });
 
+app.get("/api/untagged-route", async (c) => {
+  return c.body("woah how did u find me im untagged");
+});
+
 app.use(
   "/fp/*",
   async (c, next) => {

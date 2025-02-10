@@ -705,6 +705,17 @@ export const apiSpec = {
         }
       }
     },
+    "/api/untagged-route": {
+      get: {
+        summary: "Untagged route",
+        description: "Route that is not tagged within the openapi spec"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    }
   },
   components: {
     securitySchemas: {
