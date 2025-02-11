@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@fiberplane/embedded':
-        specifier: 0.0.30
-        version: 0.0.30(hono@4.7.0)
+      '@fiberplane/hono':
+        specifier: 0.4.1-beta.1
+        version: 0.4.1-beta.1(hono@4.7.0)
       '@fiberplane/hono-otel':
         specifier: 0.6.2
         version: 0.6.2
@@ -220,13 +220,13 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@fiberplane/embedded@0.0.30':
-    resolution: {integrity: sha512-Sl/RM0QhtkXGstXO5QqsM7R+s6g2LToA+Q2r29ATmeRZjOjurjjCEavRx/ZZty1plFPEKTAoIJvXhC/tGBagUw==}
-    peerDependencies:
-      hono: ^4.0
-
   '@fiberplane/hono-otel@0.6.2':
     resolution: {integrity: sha512-iAfWxSQG/UVqa1hODu36wSJOvzupjyfluIgM8rZpjEzS2fkFIvU2omAAvZd+jOfaaunCLBiV3e/4pm/6XBLqig==}
+
+  '@fiberplane/hono@0.4.1-beta.1':
+    resolution: {integrity: sha512-AFWcRMU4mqpBtUSUKDPjJ34wteaPbj8R+PtSXo9LBEEt5wA7RaNyUlt+/ZcLobcPQI8kNG6cKNSrbMpZq0pGLg==}
+    peerDependencies:
+      hono: ^4.0
 
   '@jridgewell/resolve-uri@3.1.2':
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
@@ -474,9 +474,6 @@ packages:
   ohash@1.1.4:
     resolution: {integrity: sha512-FlDryZAahJmEF3VR3w1KogSEdWX3WhA5GPakFx4J81kEAiHyLMpdLLElS8n8dfNadMgAne/MywcvmogzscVt4g==}
 
-  openapi-types@12.1.3:
-    resolution: {integrity: sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw==}
-
   path-to-regexp@6.3.0:
     resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
 
@@ -683,12 +680,6 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@fiberplane/embedded@0.0.30(hono@4.7.0)':
-    dependencies:
-      hono: 4.7.0
-      openapi-types: 12.1.3
-      zod: 3.24.1
-
   '@fiberplane/hono-otel@0.6.2':
     dependencies:
       '@opentelemetry/api': 1.9.0
@@ -699,6 +690,11 @@ snapshots:
       '@opentelemetry/semantic-conventions': 1.29.0
       '@types/shimmer': 1.2.0
       shimmer: 1.2.1
+
+  '@fiberplane/hono@0.4.1-beta.1(hono@4.7.0)':
+    dependencies:
+      hono: 4.7.0
+      zod: 3.24.1
 
   '@jridgewell/resolve-uri@3.1.2': {}
 
@@ -954,8 +950,6 @@ snapshots:
   mustache@4.2.0: {}
 
   ohash@1.1.4: {}
-
-  openapi-types@12.1.3: {}
 
   path-to-regexp@6.3.0: {}
 

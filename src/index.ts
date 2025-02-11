@@ -2,7 +2,7 @@ import { instrument } from "@fiberplane/hono-otel";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
-import { createMiddleware as createFiberplane } from "@fiberplane/embedded";
+import { createFiberplane } from "@fiberplane/hono";
 import { apiReference } from '@scalar/hono-api-reference'
 
 import apiSpec from "./apiSpec";
@@ -310,7 +310,6 @@ app.use(
       debug: true,
       openapi: { url: "/openapi.json" },
       apiKey,
-      // @ts-expect-error - TODO: fix this in the middleware
     })(c, next)
   }
 );
