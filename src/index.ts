@@ -2,7 +2,7 @@ import { instrument } from "@fiberplane/hono-otel";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
-import { createMiddleware } from "@fiberplane/embedded";
+import { createMiddleware as createFiberplane } from "@fiberplane/embedded";
 import { apiReference } from '@scalar/hono-api-reference'
 
 import apiSpec from "./apiSpec";
@@ -222,10 +222,11 @@ app.use(
   "/fp/*",
   async (c, next) => {
     const apiKey = c.env.FP_API_KEY;
-    return createMiddleware({
+    return createFiberplane({
+      debug: true,
       openapi: { url: "/openapi.json" },
       apiKey,
-    // @ts-expect-error - TODO: fix this in the middleware
+      // @ts-expect-error - TODO: fix this in the middleware
     })(c, next)
   }
 );
