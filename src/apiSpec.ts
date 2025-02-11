@@ -539,9 +539,204 @@ export const apiSpec = {
           }
         }
       }
+    },
+    "/api/auth/basic": {
+      get: {
+        tags: ["Misc"],
+        summary: "Basic Auth route",
+        description: "Route with Basic Authentication",
+        security: {
+          BasicAuth: []
+        },
+        responses: {
+          "200": {
+            description: "OK"
+          },
+          "401": {
+            description: "No Basic Auth header provided"
+          }
+        }
+      }
+    },
+    "/api/auth/bearer": {
+      get: {
+        tags: ["Misc"],
+        summary: "Bearer Auth route",
+        description: "Route with Bearer Authentication",
+        security: {
+          BearerAuth: []
+        },
+        responses: {
+          "200": {
+            description: "OK"
+          },
+          "401": {
+            description: "No Bearer Auth header provided"
+          }
+        }
+      }
+    },
+    "/api/auth/key": {
+      get: {
+        tags: ["Misc"],
+        summary: "API Key Auth route",
+        description: "Route with API Key Authentication",
+        security: {
+          ApiKeyAuth: []
+        },
+        responses: {
+          "200": {
+            description: "OK"
+          },
+          "401": {
+            description: "No API Key header provided"
+          }
+        }
+      }
+    },
+    "/api/auth/google": {
+      get: {
+        tags: ["Misc"],
+        summary: "Google Auth route",
+        description: "Route with Google OpenIdConnect Authentication",
+        security: {
+          GoogleOpenIdAuth: ["read"]
+        },
+        responses: {
+          "200": {
+            description: "OK"
+          }
+        }
+      }
+    },
+    "/api/methods/get": {
+      get: {
+        tags: ["Misc"],
+        summary: "GET route",
+        description: "Route with GET HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/head": {
+      head: {
+        tags: ["Misc"],
+        summary: "HEAD route",
+        description: "Route with HEAD HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/options": {
+      options: {
+        tags: ["Misc"],
+        summary: "OPTIONS route",
+        description: "Route with OPTIONS HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/trace": {
+      trace: {
+        tags: ["Misc"],
+        summary: "TRACE route",
+        description: "Route with TRACE HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/put": {
+      put: {
+        tags: ["Misc"],
+        summary: "PUT route",
+        description: "Route with PUT HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/delete": {
+      delete: {
+        tags: ["Misc"],
+        summary: "DELETE route",
+        description: "Route with DELETE HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/post": {
+      post: {
+        tags: ["Misc"],
+        summary: "POST route",
+        description: "Route with POST HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/methods/patch": {
+      patch: {
+        tags: ["Misc"],
+        summary: "PATCH route",
+        description: "Route with PATCH HTTP method"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
+    },
+    "/api/untagged-route": {
+      get: {
+        summary: "Untagged route",
+        description: "Route that is not tagged within the openapi spec"
+      },
+      responses: {
+        "200": {
+          description: "OK"
+        }
+      }
     }
   },
   components: {
+    securitySchemas: {
+      BasicAuth: {
+        type: "http",
+        scheme: "basic"
+      },
+      BearerAuth: {
+        type: "http",
+        scheme: "bearer"
+      },
+      ApiKeyAuth: {
+        type: "apiKey",
+        in: "header",
+        name: "X-API-Key"
+      },
+      GoogleOpenIdAuth: {
+        type: "openIdConnect",
+        openIdConnectUrl: "https://accounts.google.com/.well-known/openid-configuration"
+      }
+    },
     schemas: {
       NewArtist: {
         type: "object",

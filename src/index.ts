@@ -218,6 +218,90 @@ app.post("/api/songs/:id/audio", async (c) => {
   });
 });
 
+// Misc auth routes
+app.get("/api/auth/basic", async (c) => {
+  const authHeader = c.req.header("Authorization");
+
+  if (authHeader === undefined) {
+    return c.text("bad kitty, you didn't even sent a Authorization header!", 401);
+  }
+
+  if (!authHeader.startsWith("Basic")) {
+    return c.text("bad kitty, the Authorization header needs to be Basic auth!", 401);
+  }
+
+  // cat
+  return c.body("meow :)");
+});
+
+app.get("/api/auth/bearer", async (c) => {
+  const authHeader = c.req.header("Authorization");
+
+  if (authHeader === undefined) {
+    return c.text("bad doggo, you didn't even sent a Authorization header!", 401);
+  }
+
+  if (!authHeader.startsWith("Bearer")) {
+    return c.text("bad doggo, the Authorization header needs to be Bearer auth!", 401);
+  }
+
+  // dog
+  return c.body("woof :)");
+});
+
+app.get("/api/auth/key", async (c) => {
+  const authHeader = c.req.header("X-API-Key");
+
+  if (authHeader === undefined) {
+    return c.text("bad mooer, you didn't even sent a X-API-Key header!", 401);
+  }
+
+  // cow
+  return c.body("moo :)");
+});
+
+app.get("/api/auth/google", async (c) => {
+  // sheep
+  return c.body("baa :)");
+});
+
+// Misc method routes
+app.get("/api/methods/get", async (c) => {
+  return c.body("OK");
+});
+
+app.on("HEAD", "/api/methods/head", async (c) => {
+  return c.body("OK");
+});
+
+app.options("/api/methods/options", async (c) => {
+  return c.body("OK");
+});
+
+app.on("TRACE", "/api/methods/trace", async (c) => {
+  return c.body("OK");
+});
+
+app.put("/api/methods/put", async (c) => {
+  return c.body("OK");
+});
+
+app.delete("/api/methods/delete", async (c) => {
+  return c.body("OK");
+});
+
+app.post("/api/methods/post", async (c) => {
+  return c.body("OK");
+});
+
+app.patch("/api/methods/patch", async (c) => {
+  return c.body("OK");
+});
+
+app.get("/api/untagged-route", async (c) => {
+  return c.body("woah how did u find me im untagged");
+});
+
 app.use(
   "/fp/*",
   async (c, next) => {
