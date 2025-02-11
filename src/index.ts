@@ -304,14 +304,11 @@ app.get("/api/untagged-route", async (c) => {
 
 app.use(
   "/fp/*",
-  async (c, next) => {
-    const apiKey = c.env.FP_API_KEY;
-    return createFiberplane({
-      debug: true,
-      openapi: { url: "/openapi.json" },
-      apiKey,
-    })(c, next)
-  }
+  createFiberplane({
+    debug: true,
+    openapi: { url: "/openapi.json" },
+    // `apiKey` can be automatically detected from the environment variable FIBERPLANE_API_KEY
+  })
 );
 
 // export default instrument(app);
