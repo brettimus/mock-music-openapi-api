@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fiberplane/hono':
-        specifier: 0.4.1-beta.2
-        version: 0.4.1-beta.2(hono@4.7.0)
+        specifier: 0.4.1-beta.3
+        version: 0.4.1-beta.3(hono@4.7.0)
       '@fiberplane/hono-otel':
         specifier: 0.6.2
         version: 0.6.2
@@ -223,8 +223,8 @@ packages:
   '@fiberplane/hono-otel@0.6.2':
     resolution: {integrity: sha512-iAfWxSQG/UVqa1hODu36wSJOvzupjyfluIgM8rZpjEzS2fkFIvU2omAAvZd+jOfaaunCLBiV3e/4pm/6XBLqig==}
 
-  '@fiberplane/hono@0.4.1-beta.2':
-    resolution: {integrity: sha512-U93wYuEWjXj5XAUupmBCMm90+wWJUoxIhuISW9hY4KQGi+tCkcC5NzFwY3PKP5/kC11HF9L2H1XITKpgbmQ9sA==}
+  '@fiberplane/hono@0.4.1-beta.3':
+    resolution: {integrity: sha512-loDDzpG0mBBEpBG/AF6IJsSDJMIUPWbe/woofI+yrLxZeaYqqCiccRVXNyENbIDLATdjRLxl4ob/LQrMcF605g==}
     peerDependencies:
       hono: ^4.0
 
@@ -691,7 +691,7 @@ snapshots:
       '@types/shimmer': 1.2.0
       shimmer: 1.2.1
 
-  '@fiberplane/hono@0.4.1-beta.2(hono@4.7.0)':
+  '@fiberplane/hono@0.4.1-beta.3(hono@4.7.0)':
     dependencies:
       hono: 4.7.0
       zod: 3.24.1
