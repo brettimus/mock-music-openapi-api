@@ -37,3 +37,6 @@ lerna-debug.log*
 drizzle
 
 .wrangler
+
+# personal files
+secret-notes.md
