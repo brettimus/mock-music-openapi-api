@@ -1,15 +1,16 @@
 {
   "name": "fp-playground-mock-api",
+  "type": "module",
   "scripts": {
     "dev": "wrangler dev src/index.ts",
     "deploy": "wrangler deploy --minify src/index.ts",
     "fiberplane": "npx @fiberplane/studio@canary"
   },
   "dependencies": {
-    "@fiberplane/hono": "0.4.1-beta.3",
-    "@fiberplane/hono-otel": "0.6.2",
+    "@fiberplane/hono": "0.4.3",
+    "@fiberplane/hono-otel": "0.8.0-canary.3",
     "@scalar/hono-api-reference": "^0.5.170",
-    "hono": "^4.6.7"
+    "hono": "^4.7.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250129.0",

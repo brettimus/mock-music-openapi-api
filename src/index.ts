@@ -2,7 +2,7 @@ import { instrument } from "@fiberplane/hono-otel";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
-import { createFiberplane } from "@fiberplane/hono";
+import { createFiberplane, createOpenAPISpec } from "@fiberplane/hono";
 import { apiReference } from '@scalar/hono-api-reference'
 
 import apiSpec from "./apiSpec";
@@ -11,6 +11,7 @@ import { mockData } from "./mockData";
 
 type Bindings = {
   FP_API_KEY: string;
+  DB: D1Database;
 };
 
 const app = new Hono<{ Bindings: Bindings }>();
@@ -20,12 +21,17 @@ app.use("*", cors());
 app.use("*", serveEmojiFavicon("🎵"));
 
 app.get("/", async (c) => {
+  await fetch("http://localhost:8788")
   return c.text("** Music Library API **");
 });
 
-function hasServers(spec: unknown): spec is { servers: unknown[] } {
-  return !!spec && typeof spec === "object" && "servers" in spec && Array.isArray(spec.servers) && spec.servers.length > 0;
-}
+// NOTE - To test the `createOpenAPISpec` function, uncomment the following:
+//
+// app.get("/openapi.json", (c) => {
+//   return c.json(createOpenAPISpec(app, {
+//     info: { title: "Music Library API", version: "3.0.0" },
+//   }))
+// });
 
 app.get("/openapi.json", (c) => {
   const origin = new URL(c.req.url).origin;
@@ -305,11 +311,18 @@ app.get("/api/untagged-route", async (c) => {
 app.use(
   "/fp/*",
   createFiberplane({
+    app,
     debug: true,
     openapi: { url: "/openapi.json" },
     // `apiKey` can be automatically detected from the environment variable FIBERPLANE_API_KEY
   })
 );
 
-// export default instrument(app);
-export default app;
+// export default app;
+export default instrument(app, {
+  libraryDebugMode: true,
+});
+
+function hasServers(spec: unknown): spec is { servers: unknown[] } {
+  return !!spec && typeof spec === "object" && "servers" in spec && Array.isArray(spec.servers) && spec.servers.length > 0;
+}
