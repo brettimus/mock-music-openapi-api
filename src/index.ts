@@ -21,8 +21,16 @@ app.use("*", cors());
 app.use("*", serveEmojiFavicon("🎵"));
 
 app.get("/", async (c) => {
-  await fetch("http://localhost:8788")
+  await fetch("http://placegoose.fp.dev/geese")
   return c.text("** Music Library API **");
+});
+
+app.get("/placegoose-loop", async (c) => {
+  for (let i = 0; i < 3; i++) {
+    await fetch("https://placegoose.fp.dev/geese");
+    await new Promise(resolve => setTimeout(resolve, 2000));
+  }
+  return c.json([]);
 });
 
 // NOTE - To test the `createOpenAPISpec` function, uncomment the following:
@@ -314,6 +322,7 @@ app.use(
     app,
     debug: true,
     openapi: { url: "/openapi.json" },
+    // cdn: "http://localhost:3000",
     // `apiKey` can be automatically detected from the environment variable FIBERPLANE_API_KEY
   })
 );

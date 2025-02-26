@@ -26,6 +26,13 @@ export const apiSpec = {
   //   }
   // ],
   paths: {
+    "/placegoose-loop": {
+      get: {
+        tags: ["Misc"],
+        summary: "Placegoose Loop",
+        description: "Placegoose Loop",
+      }
+    },
     "/api/artists": {
       get: {
         tags: ["Artists"],
