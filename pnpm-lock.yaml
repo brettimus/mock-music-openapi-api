@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@fiberplane/hono':
-        specifier: 0.4.3
-        version: 0.4.3(@hono/zod-openapi@0.18.4(hono@4.7.0)(zod@3.24.1))(@standard-schema/spec@1.0.0)(hono@4.7.0)
+        specifier: 0.4.4-beta.1
+        version: 0.4.4-beta.1(@hono/zod-openapi@0.18.4(hono@4.7.0)(zod@3.24.1))(@standard-schema/spec@1.0.0)(hono@4.7.0)
       '@fiberplane/hono-otel':
-        specifier: 0.8.0-canary.3
-        version: 0.8.0-canary.3
+        specifier: 0.8.0-canary.4
+        version: 0.8.0-canary.4
       '@scalar/hono-api-reference':
         specifier: ^0.5.170
         version: 0.5.172(hono@4.7.0)
@@ -228,11 +228,11 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@fiberplane/hono-otel@0.8.0-canary.3':
-    resolution: {integrity: sha512-J2Y89d7ZMu0TpNYaXma5ZmZ2WNnBLtv3Z4ieXQmVT4LwEk5LmCQYK7UaBT6HFctJAMnybkjlD8dJHK2O0RYFOw==}
+  '@fiberplane/hono-otel@0.8.0-canary.4':
+    resolution: {integrity: sha512-qJyaMZswmIvK0glmJeyOH+PAEEu7yUuc06d4R3YfRpl5I414TQ/oPW02/AADMqf4ChySyEqVRTO0H0mRlSLCWg==}
 
-  '@fiberplane/hono@0.4.3':
-    resolution: {integrity: sha512-Asb36ts6en069Tjcy6if7HDYxz1byuDrWQxrbOotkmoOl3RYZIuNLQCNbfWzeVK9klhkDHn5qnKqRtnOf+O5AA==}
+  '@fiberplane/hono@0.4.4-beta.1':
+    resolution: {integrity: sha512-8DAjDGl/whhSqCQuzwCae00neVtwlQwwkjOX4F9kUoVLLOEvWaW2k6z1Gnhj43OSQq3Ck5fBAzzzWKFOl/JfUw==}
     peerDependencies:
       '@hono/zod-openapi': ^0.18.0
       hono: ^4.0
@@ -696,7 +696,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@fiberplane/hono-otel@0.8.0-canary.3':
+  '@fiberplane/hono-otel@0.8.0-canary.4':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/core': 1.9.0(@opentelemetry/api@1.9.0)
@@ -709,7 +709,7 @@ snapshots:
       '@types/shimmer': 1.2.0
       shimmer: 1.2.1
 
-  '@fiberplane/hono@0.4.3(@hono/zod-openapi@0.18.4(hono@4.7.0)(zod@3.24.1))(@standard-schema/spec@1.0.0)(hono@4.7.0)':
+  '@fiberplane/hono@0.4.4-beta.1(@hono/zod-openapi@0.18.4(hono@4.7.0)(zod@3.24.1))(@standard-schema/spec@1.0.0)(hono@4.7.0)':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       '@hono/standard-validator': 0.1.2(@standard-schema/spec@1.0.0)(hono@4.7.0)
