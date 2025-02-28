@@ -319,11 +319,11 @@ app.get("/api/untagged-route", async (c) => {
 app.use(
   "/fp/*",
   createFiberplane({
-    app,
+    // `apiKey` can be automatically detected from the environment variable FIBERPLANE_API_KEY
+    // app: app,
     debug: true,
     openapi: { url: "/openapi.json" },
     // cdn: "http://localhost:3000",
-    // `apiKey` can be automatically detected from the environment variable FIBERPLANE_API_KEY
   })
 );
 

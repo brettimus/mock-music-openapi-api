@@ -7,8 +7,8 @@
     "fiberplane": "npx @fiberplane/studio@canary"
   },
   "dependencies": {
-    "@fiberplane/hono": "0.4.4-beta.1",
-    "@fiberplane/hono-otel": "0.8.0-canary.4",
+    "@fiberplane/hono": "0.4.4-beta.4",
+    "@fiberplane/hono-otel": "0.8.0-canary.6",
     "@scalar/hono-api-reference": "^0.5.170",
     "hono": "^4.7.0"
   },
