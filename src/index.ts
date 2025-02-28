@@ -320,6 +320,9 @@ app.use(
   "/fp/*",
   createFiberplane({
     // `apiKey` can be automatically detected from the environment variable FIBERPLANE_API_KEY
+
+    // You need to pass in the app object to allow for workflow execution
+    //
     // app: app,
     debug: true,
     openapi: { url: "/openapi.json" },

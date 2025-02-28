@@ -1,0 +1,9 @@
+FIBERPLANE_API_KEY="fp_..."
+
+FIBERPLANE_OTEL_ENDPOINT=http://localhost:24318/v1/traces
+FIBERPLANE_OTEL_TOKEN="your-secret-token-here"
+
+# Enable this locally to see what traces look like in production mode
+# FIBERPLANE_ENVIRONMENT="production"
+
+FIBERPLANE_OTEL_LOG_LEVEL=debug
